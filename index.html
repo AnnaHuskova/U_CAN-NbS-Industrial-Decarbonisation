@@ -15,8 +15,7 @@ const sectors=[
 ['s5','Fuel industry',[],['i1','i2','i4','i9']],
 ['s6','Building and construction materials',[1,2],['i2','i1']],
 ['s7','Woodworking industry',[1,5],['i2']],
-['s8','Light manufacturing',[2,3,4,5],['i4','i2']],
-['s9','Other industrial subsectors',[],[]]
+['s8','Light manufacturing',[2,3,4,5],['i4','i2']]
 ];
 // Screening links: site-dependent impacts are conditional on the footprint and receptors;
 // Scope 2 is conditional on purchased energy. They are interactive assessment pathways, not confirmed impacts.
@@ -24,7 +23,7 @@ const conditionalSectorLinks={
  s1:['i3','i5','i7','i8'], s2:['i3','i5','i7','i8'],
  s3:['i3','i5','i7','i8'], s4:['i3','i5','i7','i8'],
  s5:['i3','i5','i7','i8'], s6:['i3','i5','i7','i8'],
- s7:['i3','i5','i7','i8'], s8:['i3','i5','i7','i8'], s9:[]
+ s7:['i3','i5','i7','i8'], s8:['i3','i5','i7','i8']
 };
 // Site effects are assessment candidates, not automatically present. Facility-scale evidence is mandatory.
 // Conditional impacts remain in assessment notes, not automatic graph edges.
@@ -39,7 +38,6 @@ const additionalSectorLinks={
  s6:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
  s7:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
  s8:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
- s9:[]
 };
 // Additional candidate impacts remain in assessment notes, not automatic graph edges.
 const characteristicImpacts={
@@ -73,7 +71,6 @@ s5:{refs:['REF','LCP','EFS'],process:['Fuel handling, storage, refining or combu
 s6:{refs:['CLM','CER','GLS'],process:['Kilns, dryers and mineral processing where present','Process CO₂ in cement/lime production; combustion emissions','Mineral dust, kiln residues and process water','Extraction or land disturbance only where part of facility operations'],conditional:['i3','i5','i7']},
 s7:{refs:['WBP','STS','ENE'],process:['Wood drying, cutting and panel production where present','Wood dust, VOC/formaldehyde from resins or finishing where present','Wood residues and wastewater from chemical treatment where present','Land footprint and supply-chain effects require separate assessment'],conditional:['i3','i5','i7']},
 s8:{refs:['TXT','STS','STM'],process:['Textile dyeing/finishing, coating or solvent use where present','Boilers and energy-consuming equipment','Process wastewater, dyes, solvents and production scraps where present','Site-level land and heat effects'],conditional:['i3','i5','i7']},
-s9:{refs:['ROM','ENE'],process:['No uniform process or pollutant profile can be assigned','Identify actual NACE activity, process, fuel and permits before linking impacts'],conditional:[]}
 };
 const brefNames={IS:'Iron and Steel Production',FMP:'Ferrous Metals Processing',SF:'Smitheries and Foundries',STM:'Surface Treatment of Metals and Plastics',LVOC:'Large Volume Organic Chemicals',CWW:'Common Waste Water and Waste Gas Treatment in Chemical Sector',WGC:'Common Waste Gas Management in Chemical Sector',REF:'Refining of Mineral Oil and Gas',FDM:'Food, Drink and Milk Industries',SA:'Slaughterhouses and Animal By-products',STS:'Surface Treatment Using Organic Solvents',ENE:'Energy Efficiency',LCP:'Large Combustion Plants',EFS:'Emissions from Storage',CLM:'Cement, Lime and Magnesium Oxide',CER:'Ceramic Manufacturing',GLS:'Manufacture of Glass',WBP:'Wood-based Panels Production',TXT:'Textiles Industry',ROM:'Monitoring of Emissions to Air and Water'};
 const cityProfiles=[
@@ -187,15 +184,15 @@ const sources=[['UNaLab, Nature-based Solutions Inspiration Cards (32 cards; use
 // Screening-only spatial and indirect pathways, differentiated by sector.
 // These are potential associations, NOT verified facility emissions or impacts.
 const screeningSectorLinks={
- s1:['i3','i5','i7','i14','i8','i16','i17'],
- s2:['i3','i5','i7','i14','i15','i8','i16','i17'],
- s3:['i3','i5','i14','i15','i8','i16','i17'],
- s4:['i3','i5','i14','i8','i16','i17'],
- s5:['i3','i5','i7','i14','i15','i8','i16','i17'],
- s6:['i3','i5','i7','i14','i15','i8','i16','i17'],
- s7:['i3','i5','i14','i8','i16','i17'],
- s8:['i3','i14','i8','i16','i17'],
- s9:[]
+ // Conditional screening links; verify actual equipment, site and processes.
+ s1:['i3','i5','i7','i14','i8','i16','i17','i10','i12','i13'],
+ s2:['i3','i5','i7','i14','i15','i8','i16','i17','i10','i11','i13'],
+ s3:['i3','i5','i14','i15','i8','i16','i17','i10','i13'],
+ s4:['i3','i5','i14','i8','i16','i17','i10','i12'],
+ s5:['i3','i5','i7','i14','i15','i8','i16','i17','i10','i11','i13'],
+ s6:['i3','i5','i7','i14','i15','i8','i16','i17','i10','i12','i13'],
+ s7:['i3','i5','i14','i8','i16','i17','i10'],
+ s8:['i3','i14','i8','i16','i17','i10']
 };
 const byId={};sectors.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'sector',cities:x[2],edges:x[3]});impacts.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'impact',description:x[2]});nbs.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'nbs',class:x[2],description:x[3]});approaches.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'approach',description:x[2]});
 const neighbors={};Object.keys(byId).forEach(k=>neighbors[k]=new Set());function connect(a,b){neighbors[a].add(b);neighbors[b].add(a)};sectors.forEach(s=>[...s[3],...(screeningSectorLinks[s[0]]||[])].forEach(i=>connect(s[0],i)));Object.entries(impactNbs).forEach(([i,arr])=>arr.forEach(n=>connect(i,n)));Object.entries(nbsApproach).forEach(([n,arr])=>arr.forEach(a=>connect(n,a)));
@@ -253,46 +250,7 @@ function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;',
 function renderDetails(){let d=$('details');if(!selected){d.innerHTML='<h2>How to use the network</h2><p>Click any node in the four columns. Related pathways across all four columns remain highlighted. Select another node to navigate the network.</p><div class="note methodological-description"><b>Methodological description</b><p>The European Commission (2021) identifies 12 societal challenge areas associated with NbS, providing a broad framework for understanding their potential contributions to sustainable development. However, translating these objectives into operational interventions requires identifying specific environmental and climate-related challenges associated with different industrial sectors, as well as considering the local environmental conditions and spatial characteristics of industrial sites (Cong et al., 2023; Varshney et al., 2022; Cohen-Shacham et al., 2019).</p><p>In the case of the six U_CAN cities, the industrial sectors considered in this analytical framework (Table 1, Industrial Sectors) are based on the industrial profiles of the U_CAN pilot cities described in Section 5.2, combined with the national industrial subsector classification presented in Table 2 (Electricity Consumption by Industrial Subsector in Ukraine, 2021). Accordingly, NbS should contribute to addressing the main types of industrial environmental pollution, including greenhouse gas (GHG) emissions, atmospheric pollutants (PM, NOₓ, SO₂, VOCs), industrial wastewater containing organic and chemical contaminants, and soil and groundwater pollution, as well as mitigating broader anthropogenic impacts, such as noise and light pollution, thermal pollution, vibration, land degradation, habitat fragmentation and biodiversity loss, through appropriate ecosystem-based interventions (European Commission, JRC, n.d.; European Parliament and Council, 2014; WRI & WBCSD, 2004; European Commission, 2021; Di Pirro et al., 2025; Cohen-Shacham et al., 2019).</p><p>To identify appropriate NbS interventions for different industrial sectors, the framework proposes an analytical classification of industrial impacts into three interconnected dimensions: <b>Environmental Impacts</b>, encompassing direct pressures generated by industrial activities; <b>Spatial Impacts</b>, reflecting changes in land use, site conditions and ecological functions; and <b>Indirect Impacts</b>, associated with energy consumption, supply chains and transportation beyond the immediate industrial site.</p><p>Based on these three dimensions and their sector-specific relationships, the framework identifies five thematic directions of NbS: <b>(1) Water Management &amp; Wastewater Treatment; (2) Soil Remediation &amp; Brownfield Regeneration; (3) Air Quality &amp; Microclimate Improvement; (4) Biodiversity Restoration &amp; Ecological Revitalisation; and (5) Green-Blue Infrastructure Development.</b> These directions are linked to corresponding interventions organised into three groups of integrated approaches: <b>Structural (On-site Integration)</b>, <b>Spatial &amp; Landscape Transformation</b>, and <b>Engineering Integration</b>. The interactive framework therefore traces potential pathways from industrial sectors through environmental impacts and NbS solutions to practical site-level integration approaches. These relationships are indicative and require verification against the processes, emissions, land conditions and spatial characteristics of individual facilities; they do not, by themselves, establish quantified decarbonisation benefits.</p></div>'+sourcesHTML();return}let o=byId[selected],direct=[...neighbors[selected]].map(id=>byId[id]);let grouped=types.map((t,i)=>({title:names[i],items:direct.filter(x=>x.type===t)})).filter(g=>g.items.length);let html=`<h2>${escapeHtml(o.name)}</h2><p><span class="chip">${escapeHtml(names[types.indexOf(o.type)])}</span>${o.class?`<span class="badge ${o.class}">${classText(o.class)}</span>`:''}</p>`;if(o.description)html+=`<p>${escapeHtml(o.description)}</p>`;if(o.type==='sector')html+=`<p><b>Listed city profiles:</b> ${o.cities.map(i=>cities[i]).join(', ')}. City mapping follows the supplied six-city industrial profiles; these are not facility inventories. Environmental impact connections remain preliminary and require facility-level validation.</p>`;if(o.type==='nbs')html+=`<p><b>NbS group:</b> ${escapeHtml(nbsGroups.find(g=>g.ids.includes(o.id)).title)}</p>`;if(o.type==='approach'&&detailedApproachSource[o.id])html+='<p><b>Evidence:</b> '+escapeHtml(detailedApproachSource[o.id])+'. Industrial applicability is subject to site-specific verification.</p>';if(o.type==='approach')html+=`<p><b>Integration group:</b> ${escapeHtml(approachGroups.find(g=>g.ids.includes(o.id)).title)}</p>`;if(o.type==='impact')html+=`<p><b>Impact group:</b> ${escapeHtml(impactGroups.find(g=>g.ids.includes(o.id)).title)}</p><p><b>Indicators / mechanism:</b> ${escapeHtml(o.description)}</p>`;if(o.type==='sector'&&characteristicImpacts[o.id]){let entries=Object.entries(characteristicImpacts[o.id]);html+='<h3>Characteristic impacts — process-specific</h3><p class="status">Potential pollutant and waste profiles, not confirmed facility emissions. The selected sector highlights only relevant direct-impact nodes; site-dependent and indirect impacts require separate assessment.</p><ul>'+entries.map(([id,desc])=>'<li><b>'+escapeHtml(byId[id].name)+':</b> '+escapeHtml(desc)+'</li>').join('')+'</ul><h3>Sector-specific supporting sources</h3><div class="links">'+(sectorSourceLinks[o.id]||[]).map(([name,url])=>'<a target="_blank" rel="noopener noreferrer" href="'+url+'">'+escapeHtml(name)+' ↗</a>').join('')+'</div>';}
 if(o.type==='impact'){const linked=sectors.filter(x=>x[3].includes(o.id)||(screeningSectorLinks[x[0]]||[]).includes(o.id));html+='<h3>Sector-specific pollutants and pathways</h3><ul>'+linked.map(x=>'<li><b>'+escapeHtml(x[1])+':</b> '+escapeHtml((characteristicImpacts[x[0]]||{})[o.id]||'Potential screening pathway only; verify actual facility processes, site conditions and relevant indirect activities.')+'</li>').join('')+'</ul><p class="status">Select a sector to view its applicable BREF sources. This impact category is not universal across all industries.</p>';}
 if(o.type==='sector'){const ev=sectorEvidence[o.id];html+='<h3>Process-specific evidence and conditions</h3><p><b>Potential activities / pathways (not confirmed for every site):</b></p><ul>'+ev.process.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul><p><b>Site-dependent impact categories requiring verification:</b> '+(ev.conditional.length?ev.conditional.map(id=>escapeHtml(byId[id].name)).join('; '):'No impacts assigned until the actual industrial activity is identified')+'.</p><p><b>Relevant EU JRC BREF documents:</b></p><div class="links">'+ev.refs.map(code=>'<a target="_blank" rel="noopener noreferrer" href="https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/">'+escapeHtml(code+' — '+brefNames[code])+' (JRC BREF index) ↗</a>').join('')+'</div><p class="status">The BREF index provides sector-level reference documents. The mapped pathways are an analytical interpretation, not a site-specific emissions inventory. Biodiversity and heat effects require spatial verification.</p>';}html+='<h3>Directly connected nodes</h3>';grouped.forEach(g=>{html+=`<p><b>${g.title} (${g.items.length})</b></p><div class="chips">`+g.items.map(x=>`<button class="btn" data-node="${x.id}">${escapeHtml(x.name)}</button>`).join('')+'</div>'});html+='<div class="note"><b>Assessment required:</b> check facility processes, baseline emissions and pollutants, land ownership, soil contamination, water regime, biodiversity impacts, costs and monitoring. NbS are complementary to source-level industrial emission reduction.</div>'+sourcesHTML();d.innerHTML=html;d.querySelectorAll('[data-node]').forEach(b=>b.onclick=()=>{selected=b.dataset.node;showAll=true;updateURL();render();$('details').scrollIntoView({behavior:'smooth',block:'start'})})}
-
-function sourcesHTML() {
-  return `
-    <aside class="attribution" aria-label="Authorship and contractual attribution">
-      <strong>
-        Concept and analytical framework developed by
-        <a href="https://www.linkedin.com/in/anna-huskova-nebopolelabs/"
-           target="_blank"
-           rel="noopener noreferrer">
-          Arch. Anna Mykolaivna Huskova
-        </a>.
-      </strong>
-      <div>
-        Developed within the Horizon Europe U_CAN project (WP7)
-        under the Contract for Independent Suppliers with
-        JOANNEUM RESEARCH Forschungsgesellschaft mbH,
-        for external expert services in integrated urban
-        development and policy advisory.
-      </div>
-    </aside>
-
-    <div class="sources">
-      <h3>Reference framework & research</h3>
-      ${sources.map(([n, u]) => `
-        <div class="source-item">
-          <a href="${u}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(n)} ↗
-          </a>
-        </div>
-      `).join('')}
-      <p class="status">
-        Sector classification is harmonised from the supplied
-        six-city Roadmap profiles. The 2021 national electricity
-        figures are not city-level estimates. External sources
-        inform potential impacts and NbS, but do not verify
-        every proposed link.
-      </p>
-    </div>
-  `;
-}
+function sourcesHTML(){return `<aside class="attribution" aria-label="Authorship and contractual attribution"><strong>Concept and analytical framework developed by <a href="https://www.linkedin.com/in/anna-huskova-nebopolelabs/" target="_blank" rel="noopener noreferrer">Arch. Anna Mykolaivna Huskova</a>.</strong><div>Developed within the Horizon Europe U_CAN project (WP7) under the Contract for Independent Suppliers with JOANNEUM RESEARCH Forschungsgesellschaft mbH, for external expert services in integrated urban development and policy advisory.</div></aside>`+'<div class="sources"><h3>Reference framework & research</h3>'+sources.map(([n,u])=>`<div class="source-item"><a href="${u}" target="_blank" rel="noopener noreferrer">${escapeHtml(n)} ↗</a></div>`).join('')+'<p class="status">Sector classification is harmonised from the supplied six-city Roadmap profiles. The 2021 national electricity figures are not city-level estimates. External sources inform potential impacts and NbS, but do not verify every proposed link.</p></div>'}
 function updateURL(){const u=new URL(location.href);if(selected)u.searchParams.set('node',selected);else u.searchParams.delete('node');history.replaceState(null,'',u)}$('city').onchange=()=>{selected=null;updateURL();render()};$('clear').onclick=()=>{selected=null;showAll=false;$('city').value='all';updateURL();render()};$('print').onclick=()=>window.print();$('share').onclick=async()=>{const url=location.href;try{await navigator.clipboard.writeText(url);$('share').textContent='Link copied!';setTimeout(()=>$('share').textContent='Copy share link',1700)}catch(e){window.prompt('Copy this link:',url)}};
 
 const initial=new URLSearchParams(location.search).get('node');if(initial&&byId[initial])selected=initial;render();
