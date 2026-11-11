@@ -1,0 +1,260 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>U_CAN | Nature-based Solutions for industrial decarbonisation</title><style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#172b37;background:#f5f8f8}*{box-sizing:border-box}body{margin:0}.top{background:#123d3c;color:white;padding:24px max(22px,calc((100vw - 1500px)/2))}.top h1{font-size:clamp(22px,3vw,34px);margin:5px 0}.top p{color:#d4e7e2;margin:7px 0}.shell{max-width:1500px;margin:auto;padding:22px}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}.controls input,.controls select{padding:11px 13px;border:1px solid #cbdad7;border-radius:9px;background:white;color:#173a37;min-width:220px}.btn{border:1px solid #bdd0cc;border-radius:9px;background:white;padding:10px 14px;cursor:pointer;color:#16473e;font-weight:600}.btn:hover{background:#e5f2ec}.btn.primary{background:#17644e;color:white;border-color:#17644e}.hint{font-size:12px;color:#627b77}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}.column{background:white;border:1px solid #dbe7e4;border-radius:14px;padding:12px;min-width:0;box-shadow:0 3px 13px #123d3c09}.column h2{font-size:14px;margin:2px 0 4px}.column .sub{font-size:11px;color:#617a77;margin-bottom:11px;min-height:28px}.nodes{display:flex;flex-direction:column;gap:7px}.node{display:block;width:100%;text-align:left;border:1px solid #e0e9e7;border-left:4px solid #7ba79c;background:#fbfdfc;border-radius:9px;padding:10px 9px;cursor:pointer;color:#243a3b;font-size:12px;line-height:1.35;transition:.12s}.node:hover{border-color:#5c9984;background:#eff8f3}.node.active{background:#d7f0e3;border-color:#19825e;box-shadow:0 0 0 1px #19825e}.node.muted{opacity:.22;filter:grayscale(.55)}.node.linked{background:#e2f5eb;border-color:#298563;color:#102e27;box-shadow:0 0 0 1px #81c9a8}.node.active{background:#b5ebd1!important;border-color:#08734d!important;box-shadow:0 0 0 2px #08734d!important;font-weight:700}.node small{display:block;color:#667b77;margin-top:3px;font-size:10px}.node .tag{display:inline-block;font-size:9px;background:#e9f0ee;padding:2px 5px;border-radius:5px;margin-top:5px}.column:nth-child(1) .node{border-left-color:#487da9}.column:nth-child(2) .node{border-left-color:#d28b3f}.column:nth-child(3) .node{border-left-color:#3d9b68}.column:nth-child(4) .node{border-left-color:#8870b7}.details{background:white;border:1px solid #dce7e3;border-radius:14px;padding:19px;margin-top:16px}.details h2{margin:0 0 10px;font-size:19px}.details p,.details li{line-height:1.55;font-size:14px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.chip{border:1px solid #d5e4df;background:#f2f7f5;border-radius:100px;padding:5px 9px;font-size:11px}.badge{display:inline-block;border-radius:5px;padding:4px 7px;font-size:11px;font-weight:700}.direct{background:#d7eee0;color:#13563a}.indirect{background:#e4ecff;color:#254c87}.local{background:#fff0d7;color:#81520e}.risk{background:#fbe4df;color:#8a392b}.foot{font-size:12px;color:#617470;margin:15px 0 30px}.links a{color:#12684d;display:block;margin:8px 0;word-break:break-word}.empty{color:#637b75;font-size:13px}.legend{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.count{font-size:11px;color:#78908a;float:right}.columns-label{font-weight:700}.share{margin-left:auto}.scrolltop{overflow-x:auto}.methodological-description p{margin:10px 0 0;line-height:1.65}.methodological-description{padding:15px 18px}.note{background:#f5f9f6;border-left:3px solid #4c9473;padding:10px 13px;font-size:13px;line-height:1.5}.sources{margin-top:14px}.source-item{padding:8px 0;border-top:1px solid #edf2ef;font-size:13px}.source-item a{color:#12684d}.status{font-size:12px;color:#6a7773}.desktop-flow{display:flex;gap:5px;align-items:center;color:#c6dfd5;font-size:13px;flex-wrap:wrap}.desktop-flow b{color:white}@media(max-width:950px){.grid{min-width:940px}.shell{padding:12px}.top{padding:20px}.controls input,.controls select{min-width:170px}.share{margin-left:0}}@media print{.top{background:white;color:black}.top p{color:black}.controls{display:none}.grid{grid-template-columns:repeat(4,1fr)}.node.muted{opacity:.3}.column,.details{break-inside:avoid}}
+.attribution{margin-top:18px;padding:16px 18px;border:1px solid #c9dbd5;border-radius:12px;background:#eaf3ef;color:#173b35;font-size:14px;line-height:1.55}.attribution strong{font-weight:750}.attribution small{display:block;margin-top:6px;color:#526b63}.attribution a{color:#075e51}.data-table{border-collapse:collapse;width:100%;font-size:13px}.data-table th,.data-table td{border:1px solid #dbe7e4;padding:9px;text-align:left}.data-table td:nth-child(n+2){text-align:right}.data-table thead{background:#eaf3ef}#city-profiles p{font-size:13px;line-height:1.5;margin:7px 0}.impact-group-heading{margin:12px 0 6px;padding:9px 8px;background:#eef4f5;border-left:3px solid #3c7882;border-radius:5px;font-size:11px;line-height:1.4}.impact-group-heading small{display:block;margin-top:3px;font-size:10px;color:#607678}.impact-group-heading:first-child{margin-top:0}.column:nth-child(2) .node{margin-left:5px;width:calc(100% - 5px)}  .impact-specific{display:block;color:#405c56!important;font-size:11px!important;margin-top:5px;line-height:1.4}.node.muted .impact-specific{display:none}.framework-flow{font-size:clamp(17px,2vw,24px);line-height:1.35;margin:16px 0 14px;font-weight:700;color:#173b39}@media print{.framework-flow{color:black}}</style></head><body><header class="top"><div class="desktop-flow"><b>U_CAN ROADMAP</b> <span> / Section 6.5 / Working analytical framework</span></div><h1>Nature-based Solutions for industrial decarbonisation (from solutions to approaches)</h1></header><main class="shell"><div class="controls"><select id="city" aria-label="Filter city"><option value="all">All six pilot cities</option></select><button class="btn" id="clear">Reset selection</button><button class="btn primary share" id="share">Copy share link</button><button class="btn" id="print">Print / Save PDF</button></div><div class="hint" id="status">All nodes are displayed by default. Select a node to highlight related pathways across all four columns.</div><h2 class="framework-flow">Industrial Sectors → Environmental Impacts → Nature-based Solutions → Integrated Approaches</h2><div class="scrolltop"><div class="grid" id="network"></div></div><section class="details" id="details" aria-live="polite"><h2>Explore the network</h2><p>Select a sector, impact, NbS solution, or integrated approach to see the linked nodes, mechanisms, limitations, and sources.</p></section></main><script>
+const cities=['Kyiv','Zhytomyr','Vinnytsia','Khmelnytskyi','Lviv','Ivano-Frankivsk'];
+// Exact wording and city mapping from U_CAN Roadmap, Section 5.2, Table 11.
+// Each sector entry below is one verbatim cell item, not a newly invented sector taxonomy.
+// Harmonised sector categories based on the supplied Roadmap city profiles.
+// National electricity figures are contextual (Ukraine, 2021), NOT city-specific.
+// Screening links are process-dependent. "conditional" means only where the relevant activity or land footprint exists.
+const sectors=[
+['s1','Metallurgy and metalworking',[1,5],['i1','i2','i4']],
+['s2','Chemical and petrochemical industry',[0,4,5],['i1','i2','i4','i9']],
+['s3','Food and agro-industrial processing',[0,1,2,3,4],['i4','i2','i1']],
+['s4','Machine-building and engineering',[0,2,3,4,5],['i2','i4']],
+['s5','Fuel industry',[],['i1','i2','i4','i9']],
+['s6','Building and construction materials',[1,2],['i2','i1']],
+['s7','Woodworking industry',[1,5],['i2']],
+['s8','Light manufacturing',[2,3,4,5],['i4','i2']],
+['s9','Other industrial subsectors',[],[]]
+];
+// Screening links: site-dependent impacts are conditional on the footprint and receptors;
+// Scope 2 is conditional on purchased energy. They are interactive assessment pathways, not confirmed impacts.
+const conditionalSectorLinks={
+ s1:['i3','i5','i7','i8'], s2:['i3','i5','i7','i8'],
+ s3:['i3','i5','i7','i8'], s4:['i3','i5','i7','i8'],
+ s5:['i3','i5','i7','i8'], s6:['i3','i5','i7','i8'],
+ s7:['i3','i5','i7','i8'], s8:['i3','i5','i7','i8'], s9:[]
+};
+// Site effects are assessment candidates, not automatically present. Facility-scale evidence is mandatory.
+// Conditional impacts remain in assessment notes, not automatic graph edges.
+// Site-dependent and purchased-energy links are conditional assessment candidates, never confirmed emissions.
+// Additional impact categories are screening candidates, not verified site-level impacts.
+const additionalSectorLinks={
+ s1:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s2:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s3:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s4:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s5:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s6:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s7:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s8:['i10','i11','i12','i13','i14','i15','i8','i16','i17'],
+ s9:[]
+};
+// Additional candidate impacts remain in assessment notes, not automatic graph edges.
+const characteristicImpacts={
+s1:{i1:'Process CO₂ from iron/steelmaking and fuel combustion (where present)',i2:'Particulate matter (PM), SO₂, NOₓ and metal-bearing dust, process-dependent',i4:'Metal-bearing wastewater from pickling, cooling or surface treatment, where present'},
+s2:{i1:'Process and fuel-combustion GHG emissions where applicable',i2:'VOCs, NOₓ and process-specific gases',i4:'Chemical-containing effluents; composition depends on chemical production route',i9:'Potential spills/leaks from chemical handling and storage'},
+s3:{i4:'Organic-rich wastewater; BOD, COD, TSS and nutrients depending on processing',i2:'Odours and combustion emissions where relevant',i1:'On-site boiler and process-heating CO₂ where fuel is burned'},
+s4:{i2:'Welding fumes and VOCs from painting/degreasing where these processes exist',i4:'Oils and metal-bearing effluent from surface finishing where present'},
+s5:{i1:'CO₂ from refining and combustion; CH₄ from specific fuel-chain activities',i2:'VOCs, NOₓ, SO₂ and other fuel-specific air emissions',i4:'Oil-containing wastewater from refining and handling where present',i9:'Oil or fuel leakage and spill pathways',},
+s6:{i2:'Mineral dust (PM), kiln NOₓ/SO₂ where high-temperature production exists',i1:'Process CO₂ in cement/lime manufacture and combustion CO₂ where fuel is used',},
+s7:{i2:'Wood dust; VOCs/formaldehyde where adhesives, panels or coatings are used',},
+s8:{i4:'Dyes and chemical-containing effluents where wet textile processing exists',i2:'VOCs from solvent-based coatings or finishing where present'}
+};
+const sectorSourceLinks={
+s1:[['Iron and Steel Production (IS)','https://eippcb.jrc.ec.europa.eu/reference/iron-and-steel-production'],['Ferrous Metals Processing (FMP)','https://publications.jrc.ec.europa.eu/repository/handle/JRC131649']],
+s2:[['Chemical sector BAT references (LVOC, CWW, WGC)','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/']],
+s3:[['Food, Drink and Milk Industries (FDM)','https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2020-01/JRC118627_FDM_Bref_2019_published.pdf']],
+s4:[['Surface Treatment Using Organic Solvents (STS)','https://eippcb.jrc.ec.europa.eu/reference/surface-treatment-using-organic-solvents-including-wood-and-wood-products-preservation'],['Surface Treatment of Metals and Plastics (STM)','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/']],
+s5:[['Refining of Mineral Oil and Gas (REF)','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/']],
+s6:[['Cement, Lime and Magnesium Oxide (CLM)','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/']],
+s7:[['Wood-based Panels Production (WBP)','https://publications.jrc.ec.europa.eu/repository/handle/JRC100269'],['Surface Treatment Using Organic Solvents (STS)','https://eippcb.jrc.ec.europa.eu/reference/surface-treatment-using-organic-solvents-including-wood-and-wood-products-preservation']],
+s8:[['Textiles Industry (TXT)','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/'],['Surface Treatment Using Organic Solvents (STS)','https://eippcb.jrc.ec.europa.eu/reference/surface-treatment-using-organic-solvents-including-wood-and-wood-products-preservation']]
+};
+// Edges are screening candidates only; optional processes and site-dependent effects require verification.
+// Evidence is a process-based screening hypothesis, not proof that every facility emits these pollutants.
+const sectorEvidence={
+s1:{refs:['IS','FMP','SF','STM'],process:['Furnaces, casting and thermal treatment','Dust, metal fumes and combustion exhaust','Pickling, coating and process-water treatment','Slag, scale and metal-bearing residues'],conditional:['i3','i5','i7']},
+s2:{refs:['LVOC','CWW','WGC','REF'],process:['Chemical reactions, steam and process heating','VOC, acid gas and other process emissions','Chemical wastewater and hazardous residues','Storage, leaks and spill pathways'],conditional:['i3','i5','i7']},
+s3:{refs:['FDM','SA'],process:['Boilers, refrigeration and food-processing energy','Organic-rich wastewater and cleaning chemicals','Organic residues, packaging and potential odours','Site drainage and land-use effects'],conditional:['i3','i5','i7']},
+s4:{refs:['SF','STM','STS','ENE'],process:['Metal cutting, welding, casting or heat treatment where present','Surface finishing, degreasing and coatings where present','Metal-bearing wastewater and machining wastes','Energy consumption and plant footprint'],conditional:['i3','i5','i7']},
+s5:{refs:['REF','LCP','EFS'],process:['Fuel handling, storage, refining or combustion depending on facility','Combustion gases, VOCs and fugitive releases','Oil-contaminated water and spill risks','Sludge, residues and site disturbance'],conditional:['i3','i5','i7']},
+s6:{refs:['CLM','CER','GLS'],process:['Kilns, dryers and mineral processing where present','Process CO₂ in cement/lime production; combustion emissions','Mineral dust, kiln residues and process water','Extraction or land disturbance only where part of facility operations'],conditional:['i3','i5','i7']},
+s7:{refs:['WBP','STS','ENE'],process:['Wood drying, cutting and panel production where present','Wood dust, VOC/formaldehyde from resins or finishing where present','Wood residues and wastewater from chemical treatment where present','Land footprint and supply-chain effects require separate assessment'],conditional:['i3','i5','i7']},
+s8:{refs:['TXT','STS','STM'],process:['Textile dyeing/finishing, coating or solvent use where present','Boilers and energy-consuming equipment','Process wastewater, dyes, solvents and production scraps where present','Site-level land and heat effects'],conditional:['i3','i5','i7']},
+s9:{refs:['ROM','ENE'],process:['No uniform process or pollutant profile can be assigned','Identify actual NACE activity, process, fuel and permits before linking impacts'],conditional:[]}
+};
+const brefNames={IS:'Iron and Steel Production',FMP:'Ferrous Metals Processing',SF:'Smitheries and Foundries',STM:'Surface Treatment of Metals and Plastics',LVOC:'Large Volume Organic Chemicals',CWW:'Common Waste Water and Waste Gas Treatment in Chemical Sector',WGC:'Common Waste Gas Management in Chemical Sector',REF:'Refining of Mineral Oil and Gas',FDM:'Food, Drink and Milk Industries',SA:'Slaughterhouses and Animal By-products',STS:'Surface Treatment Using Organic Solvents',ENE:'Energy Efficiency',LCP:'Large Combustion Plants',EFS:'Emissions from Storage',CLM:'Cement, Lime and Magnesium Oxide',CER:'Ceramic Manufacturing',GLS:'Manufacture of Glass',WBP:'Wood-based Panels Production',TXT:'Textiles Industry',ROM:'Monitoring of Emissions to Air and Water'};
+const cityProfiles=[
+['Kyiv','Mechanical and electrical engineering; high-tech manufacturing; chemical and food industries; logistics (cross-cutting activity)'],
+['Zhytomyr','Metallurgy and metalworking; food processing; woodworking; construction materials'],
+['Vinnytsia','Machine-building, including transport engineering; food and light manufacturing; construction materials'],
+['Khmelnytskyi','Agro-industrial processing; food and light industries; machine-building'],
+['Lviv','Mechanical and precision engineering; food, chemical and pharmaceutical industries; light manufacturing'],
+['Ivano-Frankivsk','Machine-building; metalworking; woodworking; chemical and light industries']
+];
+const nationalElectricity=[
+['Metallurgy',28872.8,55.24],['Chemical and petrochemical industry',4349.2,8.32],['Food and processing industry',4404.7,8.43],['Machine-building',3522.1,6.74],['Fuel industry',3261.5,6.24],['Building materials',2669.9,5.11],['Other industrial subsectors',5193.5,9.93]
+];
+const impactGroups=[
+ {id:'direct',title:'1. Environmental Impacts',description:'Direct environmental pressures associated with industrial activities.',ids:['i1','i2','i4','i9','i10','i11','i12','i13']},
+ {id:'site',title:'2. Spatial Impacts',description:'Changes in land use and physical environmental conditions.',ids:['i3','i5','i7','i14','i15']},
+ {id:'indirect',title:'3. Indirect Impacts',description:'Environmental and climate-related pressures beyond the immediate industrial site.',ids:['i8','i16','i17']}
+];
+const impacts=[
+ ['i1','Direct Process & Combustion GHG Emissions','On-site greenhouse gas emissions where relevant industrial processes or fuel combustion occur.'],
+ ['i2','Air Pollutant Emissions','Atmospheric pollutants associated with industrial processes.'],
+ ['i4','Industrial Wastewater & Effluent','Industrial wastewater and effluent discharges.'],
+ ['i9','Direct Soil & Groundwater Pollution','Direct contamination of soil and groundwater.'],
+ ['i10','Noise Pollution','Noise generated by industrial operations and equipment.'],
+ ['i11','Light Pollution','Artificial light associated with industrial facilities and operations.'],
+ ['i12','Vibration','Ground-borne or structural vibration associated with industrial activities.'],
+ ['i13','Waste Heat & Thermal Pollution','Excess heat released by industrial processes.'],
+ ['i3','Local Heat & Surface Temperature Effects','Local temperature changes associated with industrial land cover and built surfaces.'],
+ ['i5','Land Degradation & Brownfield Pressure','Industrial land degradation and brownfield formation.'],
+ ['i7','Biodiversity Loss & Habitat Fragmentation','Habitat fragmentation and biodiversity loss associated with industrial development.'],
+ ['i14','Soil Sealing','Impervious surfaces and reduced soil permeability associated with industrial development.'],
+ ['i15','Flooding & Waterlogging','Flooding and waterlogging associated with altered drainage and surface runoff.'],
+ ['i8','Purchased Energy-related GHG Emissions','Emissions associated with purchased electricity, heat, steam or cooling.'],
+ ['i16','Supply Chain-related Impacts','Environmental pressures associated with upstream and downstream supply chains.'],
+ ['i17','Transportation-related Impacts','Environmental pressures associated with transport beyond immediate on-site operations.']
+];
+const nbs=[
+['n1','Industrial Tree Cover & Green Buffers','local','Tree belts and vegetated buffers; local exposure and shading benefits.'],
+['n2','Green Roofs & Living Walls','indirect','Vegetated building surfaces; cooling-energy savings require measurement.'],
+['n3','Constructed Wetlands & Biofiltration','local','Planted treatment for suitable industrial effluent and runoff; pre-treatment and GHG monitoring may be required.'],
+['n4','Bioswales, Rain Gardens & Infiltration','local','Stormwater retention and treatment; avoid unsafe infiltration into contaminated soils.'],
+['n5','Phytoremediation & Soil Restoration','local','Plant-assisted remediation, subject to contaminant and risk assessment.'],
+['n6','Brownfield Renaturation & Habitat Corridors','direct','Site restoration and habitat connectivity; carbon storage is conditional.'],
+['n7','Green Shading & Microclimate Networks','indirect','Vegetation shading and microclimate management; possible cooling-energy savings.'],
+['n8','Riparian Buffers & Wetland Restoration','local','Restoration of water-edge ecosystems and vegetated riparian zones.'],
+['n9','Biomass & Ecological Landscape Management','risk','Low-input landscape management; any carbon benefit requires a lifecycle assessment.'],
+['n10','Permeable Vegetated Surfaces','local','Vegetated permeable paving and planted infiltration areas.'],
+['n11','Phytocapping & Vegetated Soil Covers','local','Vegetated containment covers for suitable industrial waste or contaminated sites.'],
+['n12','Ecological Meadows & Pollinator Habitats','local','Native meadows and pollinator-supporting habitats on suitable land.'],
+['n13','Riverbank Stabilisation & Bioengineering','local','Living willow structures, vegetated bank reinforcement and erosion control.'],
+['n14','River & Stream Restoration','local','Channel, floodplain and riparian habitat restoration where feasible.'],
+['n15','Industrial Green-Blue Networks','local','Connected green corridors, water bodies and vegetated drainage landscapes.']
+];
+const nbsGroups=[
+{title:'1. Water Management & Wastewater Treatment',ids:['n3','n4','n10']},
+{title:'2. Soil Remediation & Brownfield Regeneration',ids:['n5','n11']},
+{title:'3. Air Quality & Microclimate Improvement',ids:['n1','n2','n7']},
+{title:'4. Biodiversity Restoration & Ecological Revitalisation',ids:['n6','n9','n12']},
+{title:'5. Green-Blue Infrastructure Development',ids:['n8','n13','n14','n15']}
+];
+const approaches=[
+['a1','Green Roofs','Green roofs (extensive, intensive or blue-green); assess structural load, waterproofing and cooling demand.'],
+['a2','Vegetated Façades & Building Shading','Green façades, living walls and vegetated shading on industrial buildings.'],
+['a3','Permeable Paving for Industrial Yards','Permeable paving (porous asphalt, pervious concrete, permeable pavers or vegetated grids) in suitable low-risk yards and parking areas.'],
+['a4','Industrial Vegetated Noise Barriers','Planted barriers integrated with acoustic design; effectiveness must be measured.'],
+['a5','Industrial Green Corridors & Tree Belts','Site-scale tree networks, buffers and ecological connections.'],
+['a6','Brownfield & Meadow Landscape Regeneration','Habitat recovery on suitable unused and post-industrial land.'],
+['a7','Riparian Corridor & Wetland Restoration','Restore industrial water-edge landscapes and connected wetlands.'],
+['a8','Riverbank Bioengineering & Erosion Control','Willow fascines, live staking and planted bank reinforcement where hydraulic conditions allow.'],
+['a9','Industrial Wastewater Treatment Wetlands','Planted polishing/treatment integrated with appropriately designed industrial wastewater treatment.'],
+['a10','Bioswales & Rain Gardens in Site Drainage','Vegetated drainage, retention and runoff treatment near roads and yards.'],
+['a11','Phytoremediation of Contaminated Industrial Soil','Site-specific plant-based treatment or stabilisation with contaminant monitoring.'],
+['a12','Phytocapping of Landfills & Sludge Deposits','Engineered vegetated caps designed around containment and leachate risks.'],
+['a13','Industrial Green-Blue Retention Systems','Connected detention, planted retention and water-sensitive landscapes.'],
+['a14','Low-input Ecological Landscape Management','Native meadows and low-input planting on suitable site land; reduced mowing and maintenance assessment.']
+];
+const approachGroups=[
+{title:'1. Structural (On-site Integration)',ids:['a1','a2','a3','a4']},
+{title:'2. Spatial & Landscape Transformation',ids:['a5','a6','a7','a14']},
+{title:'3. Engineering Integration',ids:['a8','a9','a10','a11','a12','a13']}
+];
+const impactNbs={
+i1:['n1','n6','n9','n12'],i2:['n1','n7','n15'],i4:['n3','n8'],i9:['n5','n11'],
+i10:['n1','n7'],i11:['n1','n7'],i12:['n1','n15'],i13:['n2','n7'],
+i3:['n1','n2','n7','n15'],i5:['n5','n6','n11','n12'],i7:['n6','n8','n12','n14','n15'],
+i14:['n4','n10','n15'],i15:['n3','n4','n8','n10','n13','n14','n15'],
+i8:['n2','n7'],i16:['n6','n9'],i17:['n1','n7']
+};
+const nbsApproach={
+n1:['a5','a4'],n2:['a1','a2'],n3:['a9'],n4:['a10','a13'],n5:['a11'],
+n6:['a6','a5'],n7:['a2','a5'],n8:['a7','a13'],n9:['a14'],n10:['a3','a10'],
+n11:['a12'],n12:['a6','a14'],n13:['a8'],n14:['a7','a8'],n15:['a5','a7','a13']
+};
+const detailedApproachParent={};
+const detailedApproachSource={
+'a1':'UNaLab NbS Inspiration Cards: N11, N12, N13, N14 (pp. 5, 8, 14, 29)',
+'a2':'UNaLab NbS Inspiration Cards: N6, N7 (pp. 10, 18)',
+'a3':'UNaLab NbS Inspiration Cards: N18 (p. 20)',
+'a4':'UNaLab NbS Inspiration Cards: N8 (p. 11)',
+'a5':'UNaLab NbS Inspiration Cards: N1, N2, N3, N5 (pp. 4, 9, 12, 28)',
+'a6':'UNaLab NbS Inspiration Cards: N5 (p. 9); site-specific brownfield adaptation',
+'a7':'UNaLab NbS Inspiration Cards: N20, N23 (pp. 6–7)',
+'a8':'UNaLab NbS Inspiration Cards: N24, N25, N26 (pp. 16, 21, 26)',
+'a9':'UNaLab NbS Inspiration Cards: N20, N22 (pp. 2, 6); industrial wastewater requires pre-treatment assessment',
+'a10':'UNaLab NbS Inspiration Cards: N15, N19 (pp. 3, 22)',
+'a11':'Site-specific remediation approach; not directly documented in the supplied UNaLab cards',
+'a12':'Site-specific engineered containment approach; not directly documented in the supplied UNaLab cards',
+'a13':'UNaLab NbS Inspiration Cards: N16, N17, N20 (pp. 6, 13, 30)'
+};
+const sources=[['UNaLab, Nature-based Solutions Inspiration Cards (32 cards; user-supplied PDF)','https://unalab.eu/'],['European Commission / Kroos et al. (2025), Good practice examples of nature-based solutions across sectors','https://doi.org/10.2834/1306343'],['UNaLab (2020), Nature-based Solutions Technical Handbook — examples and typologies (adapted to industrial context)','https://unalab.eu/system/files/2020-02/unalab-technical-handbook-nature-based-solutions2020-02-17.pdf'],['U_CAN Roadmap — industrial profiles for six pilot cities (user-supplied extract)','https://cordis.europa.eu/project/id/101148374'],['European Commission (2021), Evaluating the Impact of Nature-based Solutions: A Handbook for Practitioners','https://doi.org/10.2777/244577'],['EU JRC, BAT Reference Documents (BREFs) — sector-specific industrial emissions and processes','https://bureau-industrial-transformation.jrc.ec.europa.eu/reference'],['EEA, European Industrial Emissions Portal — pollutants, releases to air/water/land and waste','https://industry.eea.europa.eu/industrial-emissions'],['European Commission, Industrial Emissions Portal Regulation — reporting scope and limitations','https://environment.ec.europa.eu/topics/industrial-emissions-and-safety/industrial-emissions-portal-regulation-iepr_en'],['IPCC AR6 WGIII, Chapter 11: Industry (2022)','https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/'],['Rissman et al. (2020), Technologies and policies to decarbonize global industry','https://doi.org/10.1016/j.apenergy.2020.114848'],['Anderson & Gough (2020), Evaluating the potential of nature-based solutions to reduce ozone, nitrogen dioxide, and carbon dioxide','https://doi.org/10.1016/j.cacint.2020.100043'],['Cong et al. (2023), Modeling place-based nature-based solutions to promote urban carbon neutrality','https://doi.org/10.1007/s13280-023-01872-x']];
+// Screening-only spatial and indirect pathways, differentiated by sector.
+// These are potential associations, NOT verified facility emissions or impacts.
+const screeningSectorLinks={
+ s1:['i3','i5','i7','i14','i8','i16','i17'],
+ s2:['i3','i5','i7','i14','i15','i8','i16','i17'],
+ s3:['i3','i5','i14','i15','i8','i16','i17'],
+ s4:['i3','i5','i14','i8','i16','i17'],
+ s5:['i3','i5','i7','i14','i15','i8','i16','i17'],
+ s6:['i3','i5','i7','i14','i15','i8','i16','i17'],
+ s7:['i3','i5','i14','i8','i16','i17'],
+ s8:['i3','i14','i8','i16','i17'],
+ s9:[]
+};
+const byId={};sectors.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'sector',cities:x[2],edges:x[3]});impacts.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'impact',description:x[2]});nbs.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'nbs',class:x[2],description:x[3]});approaches.forEach(x=>byId[x[0]]={id:x[0],name:x[1],type:'approach',description:x[2]});
+const neighbors={};Object.keys(byId).forEach(k=>neighbors[k]=new Set());function connect(a,b){neighbors[a].add(b);neighbors[b].add(a)};sectors.forEach(s=>[...s[3],...(screeningSectorLinks[s[0]]||[])].forEach(i=>connect(s[0],i)));Object.entries(impactNbs).forEach(([i,arr])=>arr.forEach(n=>connect(i,n)));Object.entries(nbsApproach).forEach(([n,arr])=>arr.forEach(a=>connect(n,a)));
+Object.entries(detailedApproachParent).forEach(([child,parent])=>{connect(child,parent);Object.entries(nbsApproach).forEach(([n,arr])=>{if(arr.includes(parent))connect(n,child)})});
+let selected=null,showAll=true;const $=id=>document.getElementById(id);const names=['Industrial Sectors','Environmental Impact Types','NbS Solutions','Integrated Approaches'];const types=['sector','impact','nbs','approach'];const citySelect=$('city');cities.forEach((c,i)=>citySelect.add(new Option(c,String(i))));
+// Directional traversal prevents cyclic graph links from highlighting the entire network.
+function directionalReach(startIds, direction){
+ const reached=new Set(startIds);let frontier=new Set(startIds);
+ for(let step=0;step<3;step++){
+  const next=new Set();
+  frontier.forEach(id=>{const level=types.indexOf(byId[id].type);
+   neighbors[id].forEach(other=>{if(types.indexOf(byId[other].type)===level+direction&&!reached.has(other)){
+    reached.add(other);next.add(other);
+   }});
+  });frontier=next;
+ }
+ return reached;
+}
+// Strict evidence-first paths: no automatic all-sector to all-impact connections.
+function downstream(seed){return directionalReach(seed,1)}
+function focusSet(){
+ if(!selected)return new Set(Object.keys(byId));
+ const level=types.indexOf(byId[selected].type);
+ if(level===0)return downstream([selected]);
+ if(level===1){
+  const out=downstream([selected]);
+  neighbors[selected].forEach(id=>{if(byId[id].type==='sector')out.add(id)});
+  return out;
+ }
+ if(level===2){
+  const out=new Set([selected]);
+  neighbors[selected].forEach(id=>{
+   if(byId[id].type==='impact'){
+    out.add(id);
+    neighbors[id].forEach(sec=>{if(byId[sec].type==='sector')out.add(sec)});
+   }
+   if(byId[id].type==='approach')out.add(id);
+  });return out;
+ }
+ const out=new Set([selected]);
+ neighbors[selected].forEach(id=>{if(byId[id].type==='nbs'){
+  out.add(id);
+  neighbors[id].forEach(impact=>{if(byId[impact].type==='impact'){
+   out.add(impact);
+   neighbors[impact].forEach(sec=>{if(byId[sec].type==='sector')out.add(sec)});
+  }});
+ }});return out;
+}
+function cityFocus(city){if(city==='all')return new Set(Object.keys(byId));
+ const ids=sectors.filter(s=>s[2].includes(Number(city))).map(s=>s[0]);
+ return downstream(ids);
+}
+function render(){const query='';const city=$('city').value;const relevant=focusSet();const cityRelevant=cityFocus(city);$('network').innerHTML='';types.forEach((t,idx)=>{let col=document.createElement('div');col.className='column';let h=document.createElement('h2');h.textContent=names[idx];col.append(h);let sub=document.createElement('div');sub.className='sub';sub.textContent=['Harmonised sectors from the supplied Roadmap profiles','Three groups; characteristic pollutants appear under each linked node when a sector is selected','Five thematic NbS groups; select a solution to explore links','Site-specific measures grouped by integration method'][idx];col.append(sub);let nodes=document.createElement('div');nodes.className='nodes';(t==='impact'?impactGroups.flatMap(g=>[{groupHeader:g},...g.ids.map(id=>byId[id])]):t==='nbs'?nbsGroups.flatMap(g=>[{groupHeader:g},...g.ids.map(id=>byId[id])]):t==='approach'?approachGroups.flatMap(g=>[{groupHeader:g},...g.ids.map(id=>byId[id])]):Object.values(byId).filter(o=>o.type===t)).forEach(o=>{if(o.groupHeader){let g=document.createElement('div');g.className='impact-group-heading';g.innerHTML='<strong>'+escapeHtml(o.groupHeader.title)+'</strong><small>'+escapeHtml(o.groupHeader.description)+'</small>';nodes.append(g);return;}let match=o.name.toLowerCase().includes(query)||(o.description||'').toLowerCase().includes(query);let cityOk=city==='all'||o.type!=='sector'||o.cities.includes(Number(city));let b=document.createElement('button');b.className='node'+(selected===o.id?' active':'')+((selected||city!=='all')&&relevant.has(o.id)&&cityRelevant.has(o.id)?' linked':'')+(!relevant.has(o.id)||!cityRelevant.has(o.id)?' muted':'');b.type='button';b.setAttribute('aria-pressed',selected===o.id?'true':'false');let impactNote=(o.type==='impact'&&selected&&byId[selected].type==='sector')?((characteristicImpacts[selected]||{})[o.id] || (((conditionalSectorLinks[selected]||[]).includes(o.id)||(additionalSectorLinks[selected]||[]).includes(o.id)||(screeningSectorLinks[selected]||[]).includes(o.id)) ? (o.id==='i8'?'CONDITIONAL: purchased electricity / heat / cooling; verify consumption and emission factors.':'CONDITIONAL: assess actual processes, site conditions and relevant upstream/downstream activities; not a confirmed impact.') : null)):null;b.innerHTML=escapeHtml(o.name)+(impactNote?'<small class="impact-specific">'+escapeHtml(impactNote)+'</small>':'')+(o.type==='nbs'?'<small>'+classText(o.class)+'</small>':'');b.onclick=()=>{selected=selected===o.id?null:o.id;showAll=true;updateURL();render()};nodes.append(b)});col.append(nodes);$('network').append(col)});renderDetails();$('status').textContent=selected?`Selected: ${byId[selected].name} · ${neighbors[selected].size} directly linked nodes · click again to deselect`:(city==='all'?'All nodes are displayed. Select a node to highlight connected pathways.':'City filter: '+cities[Number(city)]+'. Evidence-linked sectors and downstream pathways are highlighted; all other nodes remain visible.')}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function classText(c){return ({direct:'Potential carbon storage',indirect:'Potential avoided emissions',local:'Local environmental benefit',risk:'Conditional / requires verification'})[c]||''}
+function renderDetails(){let d=$('details');if(!selected){d.innerHTML='<h2>How to use the network</h2><p>Click any node in the four columns. Related pathways across all four columns remain highlighted. Select another node to navigate the network.</p><div class="note methodological-description"><b>Methodological description</b><p>The European Commission (2021) identifies 12 societal challenge areas associated with NbS, providing a broad framework for understanding their potential contributions to sustainable development. However, translating these objectives into operational interventions requires identifying specific environmental and climate-related challenges associated with different industrial sectors, as well as considering the local environmental conditions and spatial characteristics of industrial sites (Cong et al., 2023; Varshney et al., 2022; Cohen-Shacham et al., 2019).</p><p>In the case of the six U_CAN cities, the industrial sectors considered in this analytical framework (Table 1, Industrial Sectors) are based on the industrial profiles of the U_CAN pilot cities described in Section 5.2, combined with the national industrial subsector classification presented in Table 2 (Electricity Consumption by Industrial Subsector in Ukraine, 2021). Accordingly, NbS should contribute to addressing the main types of industrial environmental pollution, including greenhouse gas (GHG) emissions, atmospheric pollutants (PM, NOₓ, SO₂, VOCs), industrial wastewater containing organic and chemical contaminants, and soil and groundwater pollution, as well as mitigating broader anthropogenic impacts, such as noise and light pollution, thermal pollution, vibration, land degradation, habitat fragmentation and biodiversity loss, through appropriate ecosystem-based interventions (European Commission, JRC, n.d.; European Parliament and Council, 2014; WRI & WBCSD, 2004; European Commission, 2021; Di Pirro et al., 2025; Cohen-Shacham et al., 2019).</p><p>To identify appropriate NbS interventions for different industrial sectors, the framework proposes an analytical classification of industrial impacts into three interconnected dimensions: <b>Environmental Impacts</b>, encompassing direct pressures generated by industrial activities; <b>Spatial Impacts</b>, reflecting changes in land use, site conditions and ecological functions; and <b>Indirect Impacts</b>, associated with energy consumption, supply chains and transportation beyond the immediate industrial site.</p><p>Based on these three dimensions and their sector-specific relationships, the framework identifies five thematic directions of NbS: <b>(1) Water Management &amp; Wastewater Treatment; (2) Soil Remediation &amp; Brownfield Regeneration; (3) Air Quality &amp; Microclimate Improvement; (4) Biodiversity Restoration &amp; Ecological Revitalisation; and (5) Green-Blue Infrastructure Development.</b> These directions are linked to corresponding interventions organised into three groups of integrated approaches: <b>Structural (On-site Integration)</b>, <b>Spatial &amp; Landscape Transformation</b>, and <b>Engineering Integration</b>. The interactive framework therefore traces potential pathways from industrial sectors through environmental impacts and NbS solutions to practical site-level integration approaches. These relationships are indicative and require verification against the processes, emissions, land conditions and spatial characteristics of individual facilities; they do not, by themselves, establish quantified decarbonisation benefits.</p></div>'+sourcesHTML();return}let o=byId[selected],direct=[...neighbors[selected]].map(id=>byId[id]);let grouped=types.map((t,i)=>({title:names[i],items:direct.filter(x=>x.type===t)})).filter(g=>g.items.length);let html=`<h2>${escapeHtml(o.name)}</h2><p><span class="chip">${escapeHtml(names[types.indexOf(o.type)])}</span>${o.class?`<span class="badge ${o.class}">${classText(o.class)}</span>`:''}</p>`;if(o.description)html+=`<p>${escapeHtml(o.description)}</p>`;if(o.type==='sector')html+=`<p><b>Listed city profiles:</b> ${o.cities.map(i=>cities[i]).join(', ')}. City mapping follows the supplied six-city industrial profiles; these are not facility inventories. Environmental impact connections remain preliminary and require facility-level validation.</p>`;if(o.type==='nbs')html+=`<p><b>NbS group:</b> ${escapeHtml(nbsGroups.find(g=>g.ids.includes(o.id)).title)}</p>`;if(o.type==='approach'&&detailedApproachSource[o.id])html+='<p><b>Evidence:</b> '+escapeHtml(detailedApproachSource[o.id])+'. Industrial applicability is subject to site-specific verification.</p>';if(o.type==='approach')html+=`<p><b>Integration group:</b> ${escapeHtml(approachGroups.find(g=>g.ids.includes(o.id)).title)}</p>`;if(o.type==='impact')html+=`<p><b>Impact group:</b> ${escapeHtml(impactGroups.find(g=>g.ids.includes(o.id)).title)}</p><p><b>Indicators / mechanism:</b> ${escapeHtml(o.description)}</p>`;if(o.type==='sector'&&characteristicImpacts[o.id]){let entries=Object.entries(characteristicImpacts[o.id]);html+='<h3>Characteristic impacts — process-specific</h3><p class="status">Potential pollutant and waste profiles, not confirmed facility emissions. The selected sector highlights only relevant direct-impact nodes; site-dependent and indirect impacts require separate assessment.</p><ul>'+entries.map(([id,desc])=>'<li><b>'+escapeHtml(byId[id].name)+':</b> '+escapeHtml(desc)+'</li>').join('')+'</ul><h3>Sector-specific supporting sources</h3><div class="links">'+(sectorSourceLinks[o.id]||[]).map(([name,url])=>'<a target="_blank" rel="noopener noreferrer" href="'+url+'">'+escapeHtml(name)+' ↗</a>').join('')+'</div>';}
+if(o.type==='impact'){const linked=sectors.filter(x=>x[3].includes(o.id)||(screeningSectorLinks[x[0]]||[]).includes(o.id));html+='<h3>Sector-specific pollutants and pathways</h3><ul>'+linked.map(x=>'<li><b>'+escapeHtml(x[1])+':</b> '+escapeHtml((characteristicImpacts[x[0]]||{})[o.id]||'Potential screening pathway only; verify actual facility processes, site conditions and relevant indirect activities.')+'</li>').join('')+'</ul><p class="status">Select a sector to view its applicable BREF sources. This impact category is not universal across all industries.</p>';}
+if(o.type==='sector'){const ev=sectorEvidence[o.id];html+='<h3>Process-specific evidence and conditions</h3><p><b>Potential activities / pathways (not confirmed for every site):</b></p><ul>'+ev.process.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul><p><b>Site-dependent impact categories requiring verification:</b> '+(ev.conditional.length?ev.conditional.map(id=>escapeHtml(byId[id].name)).join('; '):'No impacts assigned until the actual industrial activity is identified')+'.</p><p><b>Relevant EU JRC BREF documents:</b></p><div class="links">'+ev.refs.map(code=>'<a target="_blank" rel="noopener noreferrer" href="https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/">'+escapeHtml(code+' — '+brefNames[code])+' (JRC BREF index) ↗</a>').join('')+'</div><p class="status">The BREF index provides sector-level reference documents. The mapped pathways are an analytical interpretation, not a site-specific emissions inventory. Biodiversity and heat effects require spatial verification.</p>';}html+='<h3>Directly connected nodes</h3>';grouped.forEach(g=>{html+=`<p><b>${g.title} (${g.items.length})</b></p><div class="chips">`+g.items.map(x=>`<button class="btn" data-node="${x.id}">${escapeHtml(x.name)}</button>`).join('')+'</div>'});html+='<div class="note"><b>Assessment required:</b> check facility processes, baseline emissions and pollutants, land ownership, soil contamination, water regime, biodiversity impacts, costs and monitoring. NbS are complementary to source-level industrial emission reduction.</div>'+sourcesHTML();d.innerHTML=html;d.querySelectorAll('[data-node]').forEach(b=>b.onclick=()=>{selected=b.dataset.node;showAll=true;updateURL();render();$('details').scrollIntoView({behavior:'smooth',block:'start'})})}
+function sourcesHTML(){return `<aside class="attribution" aria-label="Authorship and contractual attribution"><strong>Concept and analytical framework developed by <a href="https://www.linkedin.com/in/anna-huskova-nebopolelabs/" target="_blank" rel="noopener noreferrer">Arch. Anna Mykolaivna Huskova</a>.</strong><div>Developed within the Horizon Europe U_CAN project (WP7) under the Contract for Independent Suppliers with JOANNEUM RESEARCH Forschungsgesellschaft mbH, for external expert services in integrated urban development and policy advisory.</div><div><strong>Project / cost centre:</strong> LIF.03-24.GF.003-07 U_CAN WP7 · <strong>Service period:</strong> 15 September 2026 – 28 February 2027.</div><div><strong>U_CAN Grant Agreement No. 101148374.</strong></div><small>Contract reference: Contract for Independent Suppliers. The supporting signed invoice is No. AH-JR-2026-001 (23 October 2026); this is an invoice number, not a contract number. A separate JR contract number is not stated in that invoice.</small></aside>`+'<div class="sources"><h3>Reference framework & research</h3>'+sources.map(([n,u])=>`<div class="source-item"><a href="${u}" target="_blank" rel="noopener noreferrer">${escapeHtml(n)} ↗</a></div>`).join('')+'<p class="status">Sector classification is harmonised from the supplied six-city Roadmap profiles. The 2021 national electricity figures are not city-level estimates. External sources inform potential impacts and NbS, but do not verify every proposed link.</p></div>'}
+function updateURL(){const u=new URL(location.href);if(selected)u.searchParams.set('node',selected);else u.searchParams.delete('node');history.replaceState(null,'',u)}$('city').onchange=()=>{selected=null;updateURL();render()};$('clear').onclick=()=>{selected=null;showAll=false;$('city').value='all';updateURL();render()};$('print').onclick=()=>window.print();$('share').onclick=async()=>{const url=location.href;try{await navigator.clipboard.writeText(url);$('share').textContent='Link copied!';setTimeout(()=>$('share').textContent='Copy share link',1700)}catch(e){window.prompt('Copy this link:',url)}};
+
+const initial=new URLSearchParams(location.search).get('node');if(initial&&byId[initial])selected=initial;render();
+</script></body></html>
